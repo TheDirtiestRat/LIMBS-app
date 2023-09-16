@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "chart.js": "^4.1.2",
+    "html5-qrcode": "^2.3.4"
+  }
+}

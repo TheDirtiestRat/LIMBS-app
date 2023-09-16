@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1,
+            shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>File Maintenance</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet"/>
+        <!-- Datatables scripts -->
+        <!-- Links used -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+    </head>
+    <body>
+        <div class="d-flex" id="wrapper">
+            <!-- Sidebar-->
+            <div class="border-end bg-dark" id="sidebar-wrapper">
+                <div class="sidebar-heading border-bottom bg-light">Inventory
+                    List</div>
+                <div class="list-group list-group-flush p-2">
+                    <a class="list-group-item list-group-item-action
+                        list-group-item-light p-3" data-bs-toggle="collapse" href="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                        Inventory
+                    </a>
+                    <div class="list-group list-group-flush w-100 collapse" id="collapseExample1">
+                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                          The current link item
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                        <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                        <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                    </div>
+                    
+                    <a class="list-group-item list-group-item-action
+                        list-group-item-light p-3" data-bs-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        Inventory
+                    </a>
+                    <div class="list-group list-group-flush w-100 collapse" id="collapseExample">
+                        <a href="#" class="list-group-item list-group-item-action" aria-current="true">
+                          The current link item
+                        </a>
+                        <a href="#" class="list-group-item list-group-item-action">A second link item</a>
+                        <a href="#" class="list-group-item list-group-item-action">A third link item</a>
+                        <a href="#" class="list-group-item list-group-item-action">A fourth link item</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Page content wrapper-->
+            <div id="page-content-wrapper">
+                <!-- Top navigation-->
+                <nav class="navbar navbar-expand-lg navbar-light bg-light
+                    border-bottom">
+                    <div class="container-fluid">
+                        <button class="btn btn-dark" id="sidebarToggle">Toggle
+                            Menu</button>
+                        <button class="navbar-toggler" type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent"
+                            aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle
+                            navigation"><span class="navbar-toggler-icon"></span></button>
+                        <div class="collapse navbar-collapse"
+                            id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
+                                <li class="nav-item"><a class="nav-link"
+                                        href="dashboard.html">Dashboard</a></li>
+                                <li class="nav-item"><a class="nav-link active"
+                                        href="fileMaintenance.html">File
+                                        Maintenance</a></li>
+                                <li class="nav-item "><a class="nav-link"
+                                        href="transaction.html">Transaction</a></li>
+                                <li class="nav-item"><a class="nav-link"
+                                        href="reports.html">Reports</a></li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle"
+                                        id="navbarDropdown" href="#"
+                                        role="button" data-bs-toggle="dropdown"
+                                        aria-haspopup="true"
+                                        aria-expanded="false">Admin</a>
+                                    <div class="dropdown-menu dropdown-menu-end"
+                                        aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#!">Profile</a>
+                                        <a class="dropdown-item" href="#!">Add
+                                            new Users</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item"
+                                            href="login.html">Logout</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <!-- Page content-->
+                <div class="container-fluid p-3">
+                    <div class="row mb-3">
+                        <div class="col float-md-end">
+                            <button class="btn btn-dark mb-1" type="button">Add
+                                Item</button>
+                            <button class="btn btn-dark mb-1" type="button">Add
+                                Status</button>
+                            <button class="btn btn-dark mb-1" type="button">Add
+                                Category</button>
+                            <button class="btn btn-secondary mb-1"
+                                type="button">Edit Inventory</button>
+                            <button class="btn btn-danger mb-1" type="button">Delete
+                                Inventory</button>
+                        </div>
+                    </div>
+
+                    <!-- The search box and the sorting -->
+                    <!-- <div class="row g-2">
+                        <div class="col-lg-8">
+                            <form class="d-flex" role="search">
+                                <input id="searchBar" class="form-control me-2"
+                                    type="search" placeholder="Search Item
+                                    Name..." aria-label="Search" onkeyup="">
+                            </form>
+                        </div>
+                        <div class="col-lg">
+                            <select class="form-select" aria-label="Default
+                                select example" id="slcSort">
+                                <option selected>Sort By:</option>
+                                <option value="itemDate">Date</option>
+                                <option value="itemName">Item name</option>
+                                <option value="itemId">ID</option>
+                            </select>
+                        </div>
+                    </div> -->
+                    <hr>
+
+                    <div class="p-md-4">
+                        <h1 class=" display-3">Inventory</h1>
+                        <div class="overflow-scroll">
+                            <form action="" method="post">
+                                <table class="table table-striped table-hover" style="width: 100%;" id="itemsTable">
+                                    <thead>
+                                        <tr>
+                                            <th  style="width: 30%;">Item</th>
+                                            <th scope="col">Quantity</th>
+                                            <th scope="col">Status</th>
+                                            <th scope="col">Category</th>
+                                            <th scope="col">Barcode</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>99</td>
+                                            <td>Otto</td>
+                                            <td>asdfa</td>
+                                            <td>123412341</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mark Lksdjfl lakjsdf</td>
+                                            <td>99</td>
+                                            <td>Otto</td>
+                                            <td>sdddf</td>
+                                            <td>123412341</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mark</td>
+                                            <td>99</td>
+                                            <td>Otto</td>
+                                            <td>sdfsf</td>
+                                            <td>123412341</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Bootstrap core JS-->
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- script functionality -->
+        <script>
+            $(document).ready(function () {
+                $('#itemsTable').DataTable();
+            });
+        </script>
+    </body>
+</html>
